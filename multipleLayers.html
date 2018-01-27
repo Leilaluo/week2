@@ -52,6 +52,17 @@
         }
        
     </script>
+    
+    <script>
+        //make sure that there is a variable for the earthquake layer to be referenced by 
+        //this should be GLOBAL - i.e. not inside a function - so that any code can see the varible
+        var earthquakelayer;
+        function removeEarthquakeData(){
+            alert ("remove the earthquake data here!");
+            mymap.removeLayer(earthquakelayer);
+        }
+        
+    </script>
    
  <!-- the following CSS is used to set the size of the Map -->
 <!-- //set the size of my map and the # symbol is telling computer to find the mapid in the following script-->
@@ -65,7 +76,11 @@
 <body>
     <!-- the mapid div will hold the map -->
     <div id = "mapid" style = "width:600bpx; height: 400px;"></div>
-    <button id = "loadData" name = "loadData" onclick="loadEarthquakeData()"> Click here to load the data </button>
+    <div>
+    <button id = "loadData" name = "loadData" onclick="loadEarthquakeData()"> Click here to load the earthquake data </button>
+    <button id = "removeData" name = "removeData" onclick="removeEarthquakeData()"> Click here to remove the earthquake data </button>
+    </div>
+    
     <!-- the following script will load the map and set the default view and zoom, as well as loading the 
 basemap tiles -->
     <script>
